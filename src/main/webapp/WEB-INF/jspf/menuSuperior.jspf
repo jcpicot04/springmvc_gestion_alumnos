@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a href="http://www.ieslluissimarro.org/moodle/course/view.php?id=508" class="navbar-brand">
+    <i class="fas fa-university"></i>
+  	&nbsp;DWES &nbsp; &nbsp; &nbsp;</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+  	data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+  	aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ${pagina.getStrBootstrapActiva("login")}">
+        <a class="nav-link" href="/jcpicot_primer_app_spring_mvc/login"><i class="fas fa-home"></i>&nbsp;Home
+        </a>
+      </li>
+        <li class="nav-item ${pagina.getStrBootstrapActiva("list-alumno")}">
+        <a class="nav-link" href="/jcpicot_primer_app_spring_mvc/list-alumno">
+			<i class="fas fa-user-friends"></i>&nbsp;<spring:message code="alumnos.menuSuperior" />
+		</a>
+      </li>
+        <li class="nav-item ${pagina.getStrBootstrapActiva("list-modulo")}">
+        <a class="nav-link" href="/jcpicot_primer_app_spring_mvc/list-modulo">
+			<i class="fas fa-book"></i>&nbsp;<spring:message code="modulos.menuSuperior" />
+		</a>
+      </li>
+        <li class="nav-item ${pagina.getStrBootstrapActiva("list-logerror")}">
+        <a class="nav-link" href="/jcpicot_primer_app_spring_mvc/list-logerror">
+			<i class="fas fa-skull-crossbones"></i>&nbsp;<spring:message code="errores.menuSuperior" /></a>
+      </li>
+  </div>
+  	<div class="nav-item dropdown">
+  	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  			<img alt="${loginName}" src="imagenUsuario/${loginNickName}" class="rounded-circle" style="width:50px;height:50px">
+          &nbsp;${loginNickName}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="update-usuario?nickName=${loginNickName}">
+			<i class="fas fa-pen"></i>&nbsp; <spring:message code="usuario.editar" />
+		  </a>
+          <a class="dropdown-item" href="update-imagenUsuario?nickName=${loginNickName}">
+            <i class="fas fa-user-circle"></i>&nbsp; <spring:message code="usuario.foto" />
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item  text-danger" href="/jcpicot_primer_app_spring_mvc/login">
+            <i class="fas fa-door-open"></i>&nbsp; <spring:message code="usuario.salir" />
+          </a>          
+        </div>
+  	</div>
+  	<div class="nav-item dropdown">
+  		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  		<img alt="castellano" src="imagenes/${pagina.getIdioma()}.png">
+  		</a>
+  		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  		<a class="dropdown-item" href="${pagina.getPaginaActiva()}?language=es">
+  		<img alt="castellano" src="imagenes/es.png">&nbsp;es
+  		</a>
+  		<a class="dropdown-item" href="${pagina.getPaginaActiva()}?language=ca">
+  		<img alt="valencia" src="imagenes/ca.png">&nbsp;va
+  		</a>
+  		<a class="dropdown-item" href="${pagina.getPaginaActiva()}?language=en">
+  		<img alt="english" src="imagenes/en.png">&nbsp;en
+  		</a>
+  		</div>
+  	</div>
+    </nav>
